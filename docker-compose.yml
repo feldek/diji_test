@@ -1,0 +1,17 @@
+### Placement description
+version: '3.7'
+
+services:
+  postgres_db:
+    image: postgres:12
+    ports:
+      - '9000:5432'
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - diji_pg_data:/var/lib/postgresql/data`
+
+volumes:
+  diji_pg_data:
