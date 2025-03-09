@@ -3,21 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from '../users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../users/entities/user.entity';
+import { TransactionsModule } from '../transactions/transactions.module';
+import { typeOrmConfig } from '../../database/typeorm.config';
 
 @Module({
   imports: [
     UsersModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 9000,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'diji_test',
-      entities: [User],
-      synchronize: true, // Автоматическое создание таблиц (только для разработки)
-    }),
+    TransactionsModule,
+    TypeOrmModule.forRoot(typeOrmConfig.options),
   ],
   controllers: [AppController],
   providers: [AppService],

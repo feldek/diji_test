@@ -1,8 +1,24 @@
-### Test global custom request
+### Create user
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
   "username": "john_doe",
   "balance": "1000"
+}
+
+### Add user transaction
+POST http://localhost:3000/transactions
+Content-Type: application/json
+
+{
+  "userId": "5de1f995-bbdc-4d89-ae5c-370c9b21a7a0",
+  "amount": "1.456"
+}
+
+### Get user entity
+GET http://localhost:3000/users/5de1f995-bbdc-4d89-ae5c-370c9b21a7a0
+Content-Type: application/json
+
+{
 }
