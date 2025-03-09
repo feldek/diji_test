@@ -1,0 +1,8 @@
+### Test global custom request
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "balance": "1000"
+}
