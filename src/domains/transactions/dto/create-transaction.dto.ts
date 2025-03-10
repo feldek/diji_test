@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString } from 'class-validator';
-import { IsValidNumberString } from '../../../services/validata/StringIsFloat';
+import { IsValidNumberString } from '../../../services/validate/StringIsFloat';
 
 export class CreateTransactionDto {
   @IsString()
